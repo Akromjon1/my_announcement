@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MainProvider extends ChangeNotifier {
-  PageController pageController = PageController();
+  PageController pageController = PageController(keepPage: true);
   int currentPage = 0;
 
   void onTapNavigatorIcon(int index) {

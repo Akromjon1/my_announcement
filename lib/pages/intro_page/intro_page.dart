@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:my_announcement/pages/intro_page/intro_provider.dart';
 import 'package:provider/provider.dart';
 
-class IntroPage extends StatefulWidget {
+class IntroPage extends StatelessWidget {
   static const String id = 'intro_page';
-  @override
-  _IntroPageState createState() => _IntroPageState();
-}
+  const IntroPage({Key? key}) : super(key: key);
 
-class _IntroPageState extends State<IntroPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,19 +81,17 @@ class MakePage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height/2,
-            width: MediaQuery.of(context).size.width,
-            child: Image.asset(image, fit: BoxFit.cover,),
-          ),
-          SizedBox(height: 30,),
-          Text(title, style: TextStyle(color: Colors.black, fontSize: MediaQuery.of(context).size.height/21.1, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        SizedBox(
+          height: MediaQuery.of(context).size.height/2,
+          width: MediaQuery.of(context).size.width,
+          child: Image.asset(image, fit: BoxFit.cover,),
+        ),
+        const SizedBox(height: 30,),
+        Text(title, style: TextStyle(color: Colors.black, fontSize: MediaQuery.of(context).size.height/21.1, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+      ],
     );
   }
 }
